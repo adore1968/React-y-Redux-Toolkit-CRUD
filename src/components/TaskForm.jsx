@@ -42,22 +42,38 @@ function TaskForm() {
   }, []);
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        name="title"
-        type="text"
-        placeholder="Title"
-        value={task.title}
-        onChange={handleChange}
-      />
-      <textarea
-        name="description"
-        placeholder="Description"
-        value={task.description}
-        onChange={handleChange}
-      ></textarea>
-      <button type="submit">Create</button>
-    </form>
+    <div className="min-h-screen flex justify-center items-center">
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col bg-gray-800 p-5 container max-w-xs"
+      >
+        <label className="text-white text-lg mb-0.5">Task:</label>
+        <input
+          name="title"
+          type="text"
+          placeholder="Title"
+          value={task.title}
+          onChange={handleChange}
+          className="bg-gray-500 text-white rounded p-1 mb-5"
+        />
+        <label className="text-white text-lg mb-0.5">Description:</label>
+        <textarea
+          name="description"
+          placeholder="Description"
+          value={task.description}
+          onChange={handleChange}
+          className="bg-gray-500 text-white resize-none p-1 mb-5"
+        ></textarea>
+        <div>
+          <button
+            type="submit"
+            className="text-white bg-purple-500 inline-block py-1 px-2 rounded hover:bg-purple-800 transition-colors"
+          >
+            Create
+          </button>
+        </div>
+      </form>
+    </div>
   );
 }
 
